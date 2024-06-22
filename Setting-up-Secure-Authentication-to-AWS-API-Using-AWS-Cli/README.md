@@ -57,3 +57,5 @@ aws ec2 describe-regions --output table
 ```
 This command queries the EC2 service for a list of all regions and formats the output as a table, which makes it easy to read. A list of all the regions was received.
 
+![Capture](https://github.com/isaac-adebayo247/Devops-PBL-Course/assets/168349078/7b1daca1-1a10-4bea-8e08-9b68b6c7d2fd)
+
