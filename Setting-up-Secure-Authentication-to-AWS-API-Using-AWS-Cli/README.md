@@ -37,7 +37,7 @@ Once the AWS CLI is installed, the next taken was to configure it to use the **a
 #### _Understanding APIs_
 Before proceeding further, it's essential to mention what an _**API**_ (Application Programming Interface) is and its relevance here. An API is a set of protocols and tools that allows different software applications to communicate with each other. In the contex of AWS, the AWS API enables the scripts or the AWS CLI to interact with AWS services programmatically. This means that I can create, modify and delete AWS resources by making API calls, which are just structured requests that the AWS platform can understand and act upon.
 
-#### _Configuring AWS CLI for access to AWS:
+#### _Configuring AWS CLI for access to AWS:_
 Opened the bash terminal and entered
 ```
 aws configure
