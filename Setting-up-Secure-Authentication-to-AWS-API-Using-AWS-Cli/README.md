@@ -13,3 +13,23 @@ The following procedures were followed in order to create a script and enable th
 
 6. **_Created Programmatic Access Credentials:_** Generated programmatic access credentials - specifically, an **access key ID** and a **secret access key** for the **automation_user**. These credentials are indispensable for authenticating the script with AWS API throgh the Linux terminal, allowing it to create and manage cloud resources programmatically.
 
+#### Installing and Configuring the AWS CLI
+After setting up the AWS account (for **automation_user**) and creating the necessary IAM user and permissions, the next step involves installing the AWS Command Line Interface (CLI). The AWS CLI is a powerful tool that allows me to interact with AWS services directly from my terminal, enabling automation and simplification of AWS resource management.
+
+#### Downloading and Installing AWS CLI
+**_On Linux_**, the following steps were performed in the bash terminal
+
+1. Downloaded the AWS CLI version 2 installation file for Linux
+```
+   curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+```
+2. Unzipped the installer
+```
+unzip awscliv2.zip
+```
+3. Ran the installer
+```
+sudo ./aws/install
+```
+
+
