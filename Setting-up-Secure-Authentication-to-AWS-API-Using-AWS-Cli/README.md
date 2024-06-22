@@ -21,7 +21,7 @@ After setting up the AWS account (for **automation_user**) and creating the nece
 
 1. Downloaded the AWS CLI version 2 installation file for Linux
 ```
-   curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 ```
 2. Unzipped the installer
 ```
@@ -31,5 +31,10 @@ unzip awscliv2.zip
 ```
 sudo ./aws/install
 ```
+#### Configuring the AWS CLI
+Once the AWS CLI is installed, the next taken was to configure it to use the **access key ID** and **secret access key** generated for the **automation_user**. This will authenticate the CLI (Command Line Interface) requests to the AWS API.
+
+#### _Understanding APIs_
+Before proceeding further, it's essential to mention what an _**API**_ (Application Programming Interface) is and its relevance here. An API is a set of protocols and tools that allows different software applications to communicate with each other. In the contex of AWS, the AWS API enables the scripts or the AWS CLI to interact with AWS services programmatically. This means that I can create, modify and delete AWS resources by making API calls, which are just structured requests that the AWS platform can understand and act upon.
 
 
