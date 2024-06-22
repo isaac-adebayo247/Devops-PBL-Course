@@ -1,4 +1,15 @@
 ### Setting Up Secure Authentication to AWS API
 
 The following procedures were followed in order to create a script and enable the to complete this project. This setup is crucial for enabling the script to create EC2 instances and S3 buckets efficiently.
-1. **_Created an IAM Role:_** Began by creating an IAM role encapsulates the permissions reauired for the operations the script will perform
+1. **_Created an IAM Role:_** Began by creating an IAM role encapsulates the permissions required for the operations the script will perform.
+
+2. **_Created an IAM Policy:_** Designed an IAM policy granting full access to both EC2 and S3 services. This policy ensures the script has the necessary permissions to manage these resources.
+
+3. **_Created an IAM User:_** Instantiated an IAM user named automation_user. This user will serve as the primary entity the script uses to interact with AWS services.
+
+4. **_Assigned the User to the IAM Role:_** Linked the automation_user to the previously created IAM role to inherit its permissions. This step is vital for enabling the necessary access levels for the automation tasks.
+
+5. **_Attached the IAM Policy to the User:_** I ensured that the automation_user is explicitly granted the permissions defined in the IAM policy by attaching the policy directly to the user. This attachment solidifies the user's access to EC2 and S3 resources.
+
+6. **_Created Programmatic Access Credentials:_** Generated programmatic access credentials - specifically, an **access key ID** and a **secret access key** for the **automation_user**. These credentials are indispensable for authenticating the script with AWS API throgh the Linux terminal, allowing it to create and manage cloud resources programmatically.
+
