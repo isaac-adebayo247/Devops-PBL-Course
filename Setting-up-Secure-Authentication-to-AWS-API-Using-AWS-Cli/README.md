@@ -37,4 +37,23 @@ Once the AWS CLI is installed, the next taken was to configure it to use the **a
 #### _Understanding APIs_
 Before proceeding further, it's essential to mention what an _**API**_ (Application Programming Interface) is and its relevance here. An API is a set of protocols and tools that allows different software applications to communicate with each other. In the contex of AWS, the AWS API enables the scripts or the AWS CLI to interact with AWS services programmatically. This means that I can create, modify and delete AWS resources by making API calls, which are just structured requests that the AWS platform can understand and act upon.
 
+#### _Configuring AWS CLI for access to AWS:
+Opened the bash terminal and entered
+```
+aws configure
+```
+This command initiates the setup process for the AWS CLI installation.
+
+_**Entered the credentials:**_
+When prompted, entered the **_AWS Access Key ID_** and _**AWS Secret Access Key**_
+for  the **_automation_user_**. Ensured these are kept secured and are not shared.
+
+Next, I specified the Default **_region_** name and Default **_output_** format. The region chosen matched the one I planned to deploy resources in, and a common output format chosen was **_json_**.
+
+#### Testing the Configuration:
+To verify that the AWS CLI is configured correctly and can communicate with AWS service, tried running a basic command to list all the AWS regions:
+```
+aws ec2 describe-regions --output table
+```
+This command queries the EC2 service for a list of all regions and formats the output as a table, which makes it easy to read. A list of all the regions was received.
 
