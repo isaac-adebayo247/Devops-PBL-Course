@@ -7,10 +7,6 @@ num_of_args=$#
 users=("Ade" "Segun" "Emeka" "Michael" "Haruna")
 group_name="admin"
 
-# download the UserData file from a remote repo
-if [ ! -e ~/UserData ]; then
-  wget https://github.com/isaac-adebayo247/Devops-PBL-Course/blob/main/Linux-Administration-and-Shell-Scripting/UserData.sh -O ~/UserData.sh
-fi
 
 # Checking the number of arguments
 check_num_of_args() {
@@ -53,14 +49,26 @@ check_aws_profile() {
   fi
 }
 
-# Function to create EC2 instances
+# download UserData file
+download_user_data() {
+  cat /etc/os-release | grep debian
+  if [ $? -eq 0 ]; then
+    sudo apt update
+    sudo apt install -y zip
+  else
+    sudo yum install -y zip
+  fi
+  wget https://gitlab.com/isaac-adebayo247/user-data/-/archive/main/user-data-main.zip
+  unzip ./user-data-main.zip
+}
 
+# Function to create EC2 instances
 create_ec2_instances() {
   # Specify the parameters for the EC2 instances
   instance_type="t3.micro"
   # ami ids for Amazon Linud, Ubuntu and Redhat
-  ami_ids=("ami-01b1be742d950fb7f" "ami-0705384c0b33c194c" "ami-064983766e6ab3419")
-  servers=("Amazon" "Ubuntu" "Redhat")
+  ami_ids=("ami-01b1be742d950fb7f" "ami-011e54f70c1c91e17" "ami-064983766e6ab3419")
+  servers=("Amt" "Ubt" "Ret")
   count=1  # Number of instances to create
   region="eu-north-1" # Region to create cloud resources
   keypair="Isaac-amazon-private-key" # keypair for ssh connection
@@ -71,7 +79,8 @@ create_ec2_instances() {
     image=${ami_ids[i]}
 
     # check if the ami with the ami_id already exists
-    aws ec2 describe-tags --filters "Name=value,Values=$server" | grep $server 1> /dev/null
+    aws ec2 describe-tags --filters "Name=value,Values=$server" | grep $server &> /dev/null
+
     if [[ $? -eq 0 ]]; then
       echo "$server EC2 instance already exists"
     else
@@ -83,8 +92,8 @@ create_ec2_instances() {
       --key-name $keypair \
       --region $region \
       --security-groups "launch-wizard-2" \
-      --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$server}]" &> /dev/null
-      --user-data ~/UserData.sh
+      --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$server}]" \
+      --user-data file://user-data-main/UserData.txt &> /dev/null
 
       # Check if the EC2 instances were created successfully
       if [ $? -eq 0 ]; then
@@ -94,6 +103,7 @@ create_ec2_instances() {
       fi
    fi
  done
+ rm -rf ./user-data-main* # deletes the UserData temporary file
 }
 
 # Function to create S3 buckets for different departments
@@ -112,7 +122,7 @@ create_s3_buckets() {
         echo "s3 bucket $bucket_name already exists"
       else
         # Create S3 bucket using AWS CLI
-        aws s3api create-bucket --bucket $bucket_name --region eu-north-1 --create-bucket-configuration LocationConstraint=eu-north-1
+        aws s3api create-bucket --bucket $bucket_name --region eu-north-1 --create-bucket-configuration LocationConstraint=eu-north-1 &> /dev/null
         if [ $? -eq 0 ]; then
           echo "S3 bucket '$bucket_name' created successfully."
         else
@@ -178,7 +188,8 @@ check_num_of_args
 activate_infra_environment
 check_aws_cli
 check_aws_profile
+download_user_data
 create_ec2_instances
-create_s3_buckets
-create_iam_users
-create_iam_group
+#create_s3_buckets
+#create_iam_users
+#create_iam_group
