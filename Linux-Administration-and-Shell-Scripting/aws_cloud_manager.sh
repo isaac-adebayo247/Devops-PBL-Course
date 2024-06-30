@@ -51,15 +51,15 @@ check_aws_profile() {
 
 # download UserData file
 download_user_data() {
-  cat /etc/os-release | grep debian
+  cat /etc/os-release | grep debian &> /dev/null
   if [ $? -eq 0 ]; then
-    sudo apt update
-    sudo apt install -y zip
+    sudo apt update &> /dev/null
+    sudo apt install -y zip &> /dev/null
   else
-    sudo yum install -y zip
+    sudo yum install -y zip &> /dev/null
   fi
-  wget https://gitlab.com/isaac-adebayo247/user-data/-/archive/main/user-data-main.zip
-  unzip ./user-data-main.zip
+  wget https://gitlab.com/isaac-adebayo247/user-data/-/archive/main/user-data-main.zip &> /dev/null
+  unzip ./user-data-main.zip &> /dev/null
 }
 
 # Function to create EC2 instances
@@ -68,7 +68,7 @@ create_ec2_instances() {
   instance_type="t3.micro"
   # ami ids for Amazon Linud, Ubuntu and Redhat
   ami_ids=("ami-01b1be742d950fb7f" "ami-011e54f70c1c91e17" "ami-064983766e6ab3419")
-  servers=("Amt" "Ubt" "Ret")
+  servers=("A" "U" "R")
   count=1  # Number of instances to create
   region="eu-north-1" # Region to create cloud resources
   keypair="Isaac-amazon-private-key" # keypair for ssh connection
@@ -190,6 +190,6 @@ check_aws_cli
 check_aws_profile
 download_user_data
 create_ec2_instances
-#create_s3_buckets
-#create_iam_users
-#create_iam_group
+create_s3_buckets
+create_iam_users
+create_iam_group
