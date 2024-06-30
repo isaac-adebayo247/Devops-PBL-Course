@@ -1,8 +1,8 @@
 #!/bin/bash
 
 cat /etc/os-release | grep “debian”
-if [ $? -eq 0 ] ; then
-	sudo apt update
+if [ $? -eq 0 ]; then
+  sudo apt update
 	sudo apt install apache2
 	sudo systemctl enable apache2
 	sudo systemctl start apache2

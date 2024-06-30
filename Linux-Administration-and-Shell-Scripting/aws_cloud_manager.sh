@@ -79,7 +79,7 @@ create_ec2_instances() {
       --region $region \
       --security-groups "launch-wizard-2" \
       --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$server}]" &> /dev/null
-      # --user-data file://path/to/script.sh
+      --user-data https://github.com/isaac-adebayo247/Devops-PBL-Course/blob/main/Linux-Administration-and-Shell-Scripting/UserData.sh
 
       # Check if the EC2 instances were created successfully
       if [ $? -eq 0 ]; then
