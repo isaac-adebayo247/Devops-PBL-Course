@@ -7,6 +7,11 @@ num_of_args=$#
 users=("Ade" "Segun" "Emeka" "Michael" "Haruna")
 group_name="admin"
 
+# download the UserData file from a remote repo
+if [ ! -e ~/UserData ]; then
+  wget https://github.com/isaac-adebayo247/Devops-PBL-Course/blob/main/Linux-Administration-and-Shell-Scripting/UserData.sh -O ~/UserData.sh
+fi
+
 # Checking the number of arguments
 check_num_of_args() {
 if [ $num_of_args -eq 0 ]; then
@@ -79,7 +84,7 @@ create_ec2_instances() {
       --region $region \
       --security-groups "launch-wizard-2" \
       --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$server}]" &> /dev/null
-      --user-data https://github.com/isaac-adebayo247/Devops-PBL-Course/blob/main/Linux-Administration-and-Shell-Scripting/UserData.sh
+      --user-data ~/UserData.sh
 
       # Check if the EC2 instances were created successfully
       if [ $? -eq 0 ]; then
