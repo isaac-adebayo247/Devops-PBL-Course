@@ -6,88 +6,89 @@
 
     - 1.1 **_CentOS Support (15 points):_**
         
-        - Successful extension of the script from the last mini-project to include support fo CentOS.
+      - Successful extension of the script from the last mini-project to include support fo CentOS.
 
-        - Proper modification of functions and conditionalstatements for CentOS compatibility.
+      - Proper modification of functions and conditionalstatements for CentOS compatibility.
 
     - 1.2 **_Script Modularity (15 points):_**
 
-        - Clear organization of the script with modular functions for package installation, service management, and artifact deployment.
+      - Clear organization of the script with modular functions for package installation, service management, and artifact deployment.
 
-        - Effective use of functiond for different Linux distributions.
+      - Effective use of functiond for different Linux distributions.
 
   2. **_Infrastructure Setup (30 points):_**
 
     - 2.1 **_EC2 Instance Launch (15 points):_**
 
-        - Proper launch of EC2 instances with Amazon Linux, Ubuntu, and CentOS.
+      - Proper launch of EC2 instances with Amazon Linux, Ubuntu, and CentOS.
 
-        - Configuration of instance attributes such as instance type, security groups, and key pairs.
+      - Configuration of instance attributes such as instance type, security groups, and key pairs.
 
     - 2.2 **_Security Measures (15 points):_**
      
-        - Appropriate configuration of security groups to ensure optimal security measures.
+      - Appropriate configuration of security groups to ensure optimal security measures.
 
-        - Proper setup of key pairs for secure remote access.
+      - Proper setup of key pairs for secure remote access.
 
   3. **_Remote Execution and Deployment (30 points)_**
 
     - 3.1 **_Script Upload (10 points):_**
 
-        - Successful upload of the enhanced script to a centralized server.
+      - Successful upload of the enhanced script to a centralized server.
 
-        - Secure handling of the script to prevent unauthorized access.
+      - Secure handling of the script to prevent unauthorized access.
+
     - 3.2 **_Remote Execution (10 points):_**
     
-        - Proper execution of the script on each instance remotely.
+      - Proper execution of the script on each instance remotely.
 
-        - Handling of dependencies and adjustments for different distributions.
+      - Handling of dependencies and adjustments for different distributions.
 
     - 3.3 **_Apache Deployment (5 points):_**
 
-        - Successful deployment of the Apache web server on each instance
+      - Successful deployment of the Apache web server on each instance
 
-        - Verification of the Apache service status.
+      - Verification of the Apache service status.
 
     - 3.4 **_Sample Web Application Deployment (5 points):_**
 
-        - Successful deployment of a sample web application on each instance
+      - Successful deployment of a sample web application on each instance
 
-        - Verification of web applicatio accessibility.
+      - Verification of web applicatio accessibility.
 
   4. **_Documentation (20 points):_** 
     
     - 4.1 **_Remote Deployment Process (7 points):_**
 
-        - Comprehensive documentation detailing the entire remote deployment process
+      - Comprehensive documentation detailing the entire remote deployment process
 
-        - Clear step-by-step instructions for each task, including script enhancement, infrastructure setup, and remote execution.
+      - Clear step-by-step instructions for each task, including script enhancement, infrastructure setup, and remote execution.
 
     - 4.2 **_Configuration Details (5 points):_**
     
-        - Detailed documentation of configurations made during infrastructure setup.
+      - Detailed documentation of configurations made during infrastructure setup.
 
-        - Explanation of security measures implemented.
+      - Explanation of security measures implemented.
 
     - 4.3 **_Challenges and Solutions (5 points):_**
 
-        - Identification and documentation of challenges encountered during the project.
+      - Identification and documentation of challenges encountered during the project.
 
-        - Clear presentation of solutions implemented to overcome challenges.
+      - Clear presentation of solutions implemented to overcome challenges.
 
     - 4.4 **_Key Findings and Insights (3 points):_**
 
-        - A brief report summarizing key findings and insights gained from the project.
+      - A brief report summarizing key findings and insights gained from the project.
 
-        - Reflection on the significance of deploying across mulitple Linux distributions for system reliability.
+      - Reflection on the significance of deploying across mulitple Linux distributions for system reliability.
 
   5. **_Script Link Submission (20 points):_**
     
     - 5.1 _**Link Submission (20 points):**_
 
-        - Submission of a link to the script used for remote execution.
+      - Submission of a link to the script used for remote execution.
 
-        - Verification that the link provides access to the enhanced script with CentOS support.
+      - Verification that the link provides access to the enhanced script with CentOS support.
 
 ### Capstone Project: Shell Script for AWS IAM Management
 
