@@ -2,7 +2,7 @@
 
 #### Evaluation Criteria
 
-  1. **_Script Enhancement (30 points):_**
+1. **_Script Enhancement (30 points):_**
 
     - 1.1 **_CentOS Support (15 points):_**
         
@@ -16,7 +16,7 @@
 
       - Effective use of functiond for different Linux distributions.
 
-  2. **_Infrastructure Setup (30 points):_**
+2. **_Infrastructure Setup (30 points):_**
 
     - 2.1 **_EC2 Instance Launch (15 points):_**
 
@@ -30,7 +30,7 @@
 
       - Proper setup of key pairs for secure remote access.
 
-  3. **_Remote Execution and Deployment (30 points)_**
+3. **_Remote Execution and Deployment (30 points)_**
 
     - 3.1 **_Script Upload (10 points):_**
 
@@ -56,7 +56,7 @@
 
       - Verification of web applicatio accessibility.
 
-  4. **_Documentation (20 points):_** 
+4. **_Documentation (20 points):_** 
     
     - 4.1 **_Remote Deployment Process (7 points):_**
 
@@ -82,7 +82,7 @@
 
       - Reflection on the significance of deploying across mulitple Linux distributions for system reliability.
 
-  5. **_Script Link Submission (20 points):_**
+5. **_Script Link Submission (20 points):_**
     
     - 5.1 _**Link Submission (20 points):**_
 
